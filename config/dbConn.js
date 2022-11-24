@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async function (){
     try {
-         mongoose.connect("mongodb+srv://demma:me-girl@securitypasswordcluster.puelwma.mongodb.net/?retryWrites=true&w=majority" , {
+         mongoose.connect(process.env.DATABASE_URI , {
            useUnifiedTopology: true,
            useNewUrlParser: true
         }
