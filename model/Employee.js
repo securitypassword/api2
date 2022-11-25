@@ -1,17 +1,15 @@
-//el json es para simular una base de datos
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const adminSchema = new Schema({
-    username: {
+const employeeSchema = new Schema({
+    firstname: {
         type: String,
         required: true
     },
-    mpassword: {
+    lastname: {
         type: String,
         required: true
     }
 });
 
-module.exports = mongoose.model('Admin', adminSchema);
+module.exports = mongoose.model('Employee', employeeSchema);

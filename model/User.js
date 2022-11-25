@@ -1,5 +1,3 @@
-//el json es para simular una base de datos
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -13,6 +11,7 @@ const userSchema = new Schema({
             type: Number,
             default: 2001
         },
+        Editor: Number,
         Admin: Number
     },
     password: {
