@@ -49,6 +49,10 @@ app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 app.use('/users', require('./routes/api/users'));
 
+app.use('/getpass', require('./routes/getpass'));
+app.use('/delpass', require('./routes/getpass'));
+app.use('/newpass', require('./routes/newpass'));
+
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
