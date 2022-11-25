@@ -9,7 +9,8 @@ const createNewPassword = async (req, res) => {
         const result = await Password.create({
             title: req.body.title,
             password: req.body.password,
-            autor: req.body.autor
+            autor: req.body.autor,
+            in_bin:false
         });
 
         res.status(201).json(result);
