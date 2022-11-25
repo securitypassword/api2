@@ -46,7 +46,7 @@ const deletePassword = async (req, res) => {
     if(password.in_bin)
         result = await password.deleteOne(); //{ _id: req.body.id }
     else
-        result = await Password.findOneAndUpdate((query, {title:password.title,password:password.password,autor:password.autor,in_bin:true}, {upsert: true}, function(err, doc) {
+        result = await Password.findOneAndUpdate(({ _id: req.body.id }, {title:password.title,password:password.password,autor:password.autor,in_bin:true}, {upsert: true}, function(err, doc) {
             if (err) return res.send(500, {error: err});
             return res.send('Succesfully saved.');
         }))
