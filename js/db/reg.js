@@ -249,7 +249,7 @@ const getBinRegs = async function(body){
 
 //el main para que se pueda ejecutar desde una url
 const runReg = async function(app){
-  //obtener las contraseñas en la api con un get porque me da flojera hacer las pruebas bien haha salu3
+  //obtener las contraseñas en la api
   app.post("/getRegs", async (req, res, next) => {
       var resp = await getRegs(req.body);
       res.end(JSON.stringify({

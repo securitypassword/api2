@@ -1,6 +1,13 @@
 import CryptoJS from "crypto-js";
+import cron from "node-cron"
 
-const masterKey = "i forgor :skull:"
+
+cron.schedule('*/5 * * * *', async () => {
+  await delTokensAdmin({key:process.env.MASTER_KEY})
+});
+
+//master bait here we gooooooo
+const masterKey = process.env.MASTER_KEY
 
 //decrypt
 export const dec = function (text) {
@@ -47,7 +54,7 @@ const runSec = async function(app){
   //borrar tokens
   app.post("/delTokens", async (req, res, next) => {
     console.log("delete all tokens attempt")
-    console.log(req.body)
+    console.log("body",req.body)
     const resp = await delTokensAdmin(req.body);
     res.end(JSON.stringify(resp));
   });
